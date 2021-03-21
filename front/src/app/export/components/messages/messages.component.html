@@ -1,0 +1,28 @@
+<mat-table [dataSource]="messages" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Сообщение</mat-header-cell>
+      <mat-cell *matCellDef="let m">
+        <div class="dialog-container">
+          <div class="name">{{ m.user.first_name }} {{ m.user.last_name }}</div>
+          <div class="message">
+            {{ m.message.text }}
+          </div>
+        </div>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Действия</mat-header-cell>
+      <mat-cell style="width: 100px" *matCellDef="let m">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="blockActions"
+          (click)="exportPhotos(m.peer)"
+        >
+          Экспорт фото
+        </button></mat-cell
+      >
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>

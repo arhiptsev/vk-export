@@ -1,0 +1,6 @@
+<div class="export-info">
+  <h3 *ngIf="loading">Получение диалогов...</h3>
+  <h3 *ngIf="!loading">Выберите диалог для экспорта, у вас {{ messages.length }} диалог.</h3>
+  <mat-progress-bar *ngIf="loading" mode="buffer"></mat-progress-bar>
+  <app-messages *ngIf="!loading" [messages]="messages"></app-messages>
+</div>

@@ -1,0 +1,19 @@
+.vk-profile {
+    margin-top: 30px;
+    width: 70%;
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        button:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+.profile {
+    width: 100%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

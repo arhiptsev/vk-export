@@ -1,0 +1,16 @@
+.main-wrap {
+    margin-top: 60px;
+    height: 100%;
+    mat-sidenav-container {
+        mat-sidenav {
+            .nav-container {
+                height: 100%;
+                width: 200px;
+            }
+        }
+        height: 100%;
+        .content {
+            padding: 20px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.header {
+  height: 60px;
+  width: 100%;
+  background: #f2c14e; /* Для браузеров, которые не поддерживают градиенты */
+  background: -webkit-linear-gradient(to right, #f2c14e, #f78154); /* Для Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(to right, #f2c14e, #f78154); /* Для Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(to right, #f2c14e, #f78154); /* Для Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #f2c14e, #f78154);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+
+  .toogle {
+    button {
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+    }
+  }
+
+  .auth {
+    display: flex;
+    align-items: center;    
+  }
+}

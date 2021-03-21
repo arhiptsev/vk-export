@@ -1,0 +1,29 @@
+<div class="auth-dialog">
+    <form *ngIf="!showValidationForm" [formGroup]="vkAuthForm">
+        <div class="row">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Введите логин" formControlName="username">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <input type="password" matInput placeholder="Введите пароль" formControlName="password">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <button mat-raised-button color="primary" (click)="login()" [disabled]="!vkAuthForm.valid">Войти</button>
+        </div>
+    </form>
+
+    <form *ngIf="showValidationForm" [formGroup]="validationForm">
+        <div class="row">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Введите проверочный код" formControlName="code">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <button mat-raised-button color="primary" (click)="sendCode()" [disabled]="!validationForm.valid">Подтвердить</button>
+        </div>
+    </form>
+</div>

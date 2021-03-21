@@ -1,0 +1,30 @@
+<div class="container">
+  <mat-card *ngIf="profile" class="profile">
+    <mat-card-header>
+      <mat-card-title>Ваш профиль: {{ profile.username }}</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card *ngIf="vkProfile" class="vk-profile">
+    <mat-card-header>
+      <div *ngIf="vkProfile.photo_200" mat-card-avatar>
+        <img mat-card-avatar [src]="vkProfile.photo_200" />
+      </div>
+      <mat-card-title
+        >{{ vkProfile.first_name }} {{ vkProfile.last_name }}</mat-card-title
+      >
+      <mat-card-subtitle
+        >{{ vkProfile.country.title }}
+        {{ vkProfile.city.title }}
+        {{ vkProfile.bdate }}</mat-card-subtitle
+      >
+    </mat-card-header>
+
+    <mat-card-actions class="actions">
+      <button mat-raised-button color="primary" (click)="goToVk()">
+        Go to VK
+      </button>
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
